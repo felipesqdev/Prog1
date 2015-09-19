@@ -18,7 +18,7 @@ import android.view.ViewGroup;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
- ///
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager mViewPager;
+
     int visiters = 0;
 
     @Override
