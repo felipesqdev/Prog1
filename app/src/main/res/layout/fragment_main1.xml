@@ -21,4 +21,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_below="@+id/button1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_alignEnd="@+id/button1"
+        android:editable="true"
+        android:text="primeiro"
+        android:textSize="40sp" />
+
 </RelativeLayout>
