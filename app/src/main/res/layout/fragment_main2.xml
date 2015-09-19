@@ -4,31 +4,31 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity$PlaceholderFragment">
+    tools:context=".MainActivity$PlaceholderFragment"
+    android:background="#7d7301">
 
-    <TextView android:id="@+id/section_label2" android:layout_width="wrap_content"
+    <TextView android:id="@+id/f2label1" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Teste2"
-        android:textSize="40sp" />
+        android:text="Aperte o botão e fale..."
+        android:textSize="20sp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Buttom2"
-        android:id="@+id/button2"
-        android:textSize="40sp"
-        android:layout_below="@+id/section_label2"
+        android:text="ESCREVA!"
+        android:id="@+id/f2button1"
+        android:textSize="20sp"
+        android:layout_below="@+id/f2label1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
+        android:id="@+id/f2results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
-        android:editable="true"
-        android:text="meio"
-        android:textSize="40sp"
-        android:layout_below="@+id/button2"
-        android:layout_centerHorizontal="true" />
+        android:textSize="20sp"
+        android:layout_below="@+id/f2button1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
