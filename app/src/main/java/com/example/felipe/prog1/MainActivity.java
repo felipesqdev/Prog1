@@ -17,7 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.util.Log;
 
-public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
+//public class MainActivity extends AppCompatActivity implements ActionBar.TabListener {
+public class MainActivity extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -142,9 +143,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(0))
                 .setTabListener(new FragmentTab1()));
         actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(1))
-                .setTabListener(this));
+                .setTabListener(new FragmentTab2()));
         actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(2))
-                .setTabListener(this));
+                .setTabListener(new FragmentTab3()));
 
     } // onCreate
 
@@ -170,9 +171,10 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         return super.onOptionsItemSelected(item);
     }
 
-    //
+//
 // ACTIONBAR TABLISTENER METHODS --- se estiverem em FragmentTabX.java nao precisa...
 //
+/*
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in
@@ -187,7 +189,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
-
+*/
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
