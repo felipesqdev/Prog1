@@ -32,9 +32,16 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    ViewPager mViewPager;
+
+    // novo = static
+    static ViewPager mViewPager;
 
     int visiters = 0;
+
+    // novo metodo
+    public static void SetViewPagerPosition(int position) {
+        mViewPager.setCurrentItem(position);
+    }
 
     @Override
     protected void onPause() {
@@ -116,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             }
         });
 
+/*
         // For each of the sections in the app, add a tab to the action bar.
         for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
             // Create a tab with text corresponding to the page title defined by
@@ -125,9 +133,20 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
             actionBar.addTab(
                     actionBar.newTab()
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
-                            .setTabListener(this));
+                            .setTabListener(this)
+//                          .setTabListener(new MyTabListener<FragmentTab1>(this, "frag1", FragmentTab1.class))
+                            );
         }
     }
+*/
+        actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(0))
+                .setTabListener(new FragmentTab1()));
+        actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(1))
+                .setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(2))
+                .setTabListener(this));
+
+    } // onCreate
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -151,6 +170,9 @@ public class MainActivity extends AppCompatActivity implements ActionBar.TabList
         return super.onOptionsItemSelected(item);
     }
 
+    //
+// ACTIONBAR TABLISTENER METHODS --- se estiverem em FragmentTabX.java nao precisa...
+//
     @Override
     public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
         // When the given tab is selected, switch to the corresponding page in
