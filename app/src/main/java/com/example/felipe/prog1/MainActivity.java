@@ -2,6 +2,7 @@ package com.example.felipe.prog1;
 
 import java.util.Locale;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -34,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
 
-    // novo = static
     static ViewPager mViewPager;
 
     int visiters = 0;
 
-    // novo metodo
+    static SpeakWords MySpeakWords = null;
+
     public static void SetViewPagerPosition(int position) {
         mViewPager.setCurrentItem(position);
     }
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("TAG","onPause");
+        Log.d("TAG", "onPause");
     }
 
     @Override
@@ -93,7 +94,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("TAG","onDestroy");
+        Log.d("TAG", "onDestroy");
+        // MySpeakWords.Destroy();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        MySpeakWords.ActivityResult(requestCode, resultCode, data);
     }
 
     @Override
@@ -101,6 +109,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.d("TAG","onCreate");
+
+        if (MySpeakWords == null) {
+            MySpeakWords = new SpeakWords(this);
+        }
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
@@ -204,7 +216,16 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    default:
+                    return FragmentTab1.newInstance(1);
+                case 1:
+                    return FragmentTab2.newInstance(2);
+                case 2:
+                    return FragmentTab3.newInstance(3);
+            }
+            // return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
@@ -228,20 +249,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+/*
+
+    // A placeholder fragment containing a simple view.
+
     public static class PlaceholderFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
+        //
+        // The fragment argument representing the section number for this
+        // fragment.
+        //
         private static final String ARG_SECTION_NUMBER = "section_number";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
+        //
+        // Returns a new instance of this fragment for the given section
+        // number.
+        //
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
@@ -256,24 +278,24 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            // View rootView = inflater.inflate(R.layout.fragment_main1, container, false);
+            // View rootView = inflater.inflate(R.layout.fragment_main3, container, false);
             View rootView = null;
             int s;
 
             s = getArguments().getInt(ARG_SECTION_NUMBER, 0);
             switch (s) {
                 case 1:
-                    rootView = inflater.inflate(R.layout.fragment_main1, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_main3, container, false);
                     break;
                 case 2:
                     rootView = inflater.inflate(R.layout.fragment_main2, container, false);
                     break;
                 case 3:
-                    rootView = inflater.inflate(R.layout.fragment_main3, container, false);
+                    rootView = inflater.inflate(R.layout.fragment_main1, container, false);
                     break;
             }
             return rootView;
         }
     }
-
+*/
 }
