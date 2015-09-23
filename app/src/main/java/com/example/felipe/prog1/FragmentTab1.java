@@ -49,10 +49,10 @@ public class FragmentTab1 extends Fragment implements ActionBar.TabListener, Vie
 
         switch(v.getId())
         {
-            case R.id.f3button1:
+            case R.id.f1button:
                 Log.d(TAG, "onClick - speak");
 
-                EditText enteredText = (EditText)myView.findViewById(R.id.f3text1);
+                EditText enteredText = (EditText)myView.findViewById(R.id.f1text);
 
                 if (enteredText == null) {
                     Log.d(TAG, "onClick - speak - enteredText == null");

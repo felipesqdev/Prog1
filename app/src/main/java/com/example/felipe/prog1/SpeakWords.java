@@ -27,7 +27,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
 
     // Constructor
     public SpeakWords (Activity act) {
-        Log.d(TAG, "CONSTRUCTOR");
+        Log.d(TAG, "1 - CONSTRUCTOR");
 
         MyActivity = act;
 
@@ -46,19 +46,19 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
 
     //act on result of TTS data check
     public void ActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d(TAG, "ActivityResult");
+        Log.d(TAG, "2 - ActivityResult");
 
         if (requestCode == MY_DATA_CHECK_CODE) {
-            Log.d(TAG, "ActivityResult - MY_CHECK_DATA_CODE");
+            Log.d(TAG, "2a - ActivityResult - MY_CHECK_DATA_CODE");
 
             if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
-                Log.d(TAG, "ActivityResult - CHECK_VOICE_DATA_PASS");
+                Log.d(TAG, "3 - ActivityResult - CHECK_VOICE_DATA_PASS");
 
                 // Passo 3 - Cria o objeto TTS...
                 // Obs: o passo 2 pode nÃ£o ter sido necessÃ¡rio...
                 myTTS = new TextToSpeech(MyActivity.getApplicationContext(), this);
             } else {
-                Log.d(TAG, "ActivityResult - NOT CHECK_VOICE_DATA_PASS");
+                Log.d(TAG, "2b - ActivityResult - NOT CHECK_VOICE_DATA_PASS");
 
                 // Passo 2 - TTS nÃ£o estÃ¡ instalado, entÃ£o instala...
                 Intent installTTSIntent = new Intent();
@@ -70,7 +70,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
 
     //setup TTS
     public void onInit(int initStatus) {
-        Log.d(TAG, "onInit");
+        Log.d(TAG, "4 - onInit");
 
         //if (TTS_initialized) {
         //    return;
@@ -78,7 +78,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
 
         //check for successful instantiation
         if (initStatus == TextToSpeech.SUCCESS) {
-            Log.d(TAG, "onInit - SUCCESS");
+            Log.d(TAG, "4a - onInit - SUCCESS");
 
             // Passo 4a - O objeto TTS foi inicializado sem problemas...
             myTTS.setLanguage(Locale.getDefault());
@@ -87,7 +87,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
             //    myTTS.setLanguage(Locale.US);
         }
         else if (initStatus == TextToSpeech.ERROR) {
-            Log.d(TAG, "onInit - ERROR");
+            Log.d(TAG, "4b - onInit - ERROR");
 
             // Passo 4b - Deu erro na inicializaÃ§Ã£o do TTS!
             Context cont = MyActivity.getApplicationContext();
@@ -97,7 +97,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
 
     //speak the user text
     public static void DoSpeak(String speech) {
-        Log.d(TAG, "doSpeak - " + speech);
+        Log.d(TAG, "5 - doSpeak - " + speech);
 
         //speak straight away
         myTTS.speak(speech, TextToSpeech.QUEUE_FLUSH, null);

@@ -7,7 +7,7 @@
     tools:context=".MainActivity$PlaceholderFragment"
     android:background="#860672">
 
-    <TextView android:id="@+id/f3label1" android:layout_width="wrap_content"
+    <TextView android:id="@+id/f1label" android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Digite o texto para falar:"
         android:textSize="20sp" />
@@ -15,11 +15,11 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/f3text1"
+        android:id="@+id/f1text"
         android:editable="true"
         android:text="alo, alo, testando"
         android:textSize="20sp"
-        android:layout_below="@+id/f3label1"
+        android:layout_below="@+id/f1label"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -29,18 +29,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FALE!"
-        android:id="@+id/f3button1"
+        android:id="@+id/f1button"
         android:textSize="20sp"
-        android:layout_below="@+id/f3text1"
+        android:layout_below="@+id/f1text"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:id="@+id/f3results"
+        android:id="@+id/f1results"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_below="@+id/f3button1"
+        android:layout_below="@+id/f1button"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
