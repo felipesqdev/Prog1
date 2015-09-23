@@ -13,6 +13,9 @@ import android.widget.Toast;
  * Created by FelipeSQ on 16/09/2014.
  */
 
+// http://code.tutsplus.com/tutorials/android-sdk-using-the-text-to-speech-engine--mobile-8540
+// http://developer.android.com/reference/android/speech/tts/TextToSpeech.html
+
 public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListener {
     private static final String TAG = SpeakWords.class.getSimpleName();
 
