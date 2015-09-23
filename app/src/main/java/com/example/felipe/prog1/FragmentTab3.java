@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * Created by Felipe on 19/09/2015.
@@ -16,6 +17,7 @@ public class FragmentTab3 extends Fragment implements ActionBar.TabListener, Vie
     private static final String TAG = FragmentTab3.class.getSimpleName();
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static View myView;
+    //private static Button speakButton;
 
     public static FragmentTab3 newInstance(int sectionNumber) {
         FragmentTab3 fragment = new FragmentTab3();
@@ -36,6 +38,11 @@ public class FragmentTab3 extends Fragment implements ActionBar.TabListener, Vie
         // s = getArguments().getInt(ARG_SECTION_NUMBER, 0);
 
         myView = inflater.inflate(R.layout.fragment_main3, container, false);
+
+        //speakButton = (Button)myView.findViewById(R.id.f1button);
+        //listen for clicks
+        //speakButton.setOnClickListener(this);
+        //speakButton.requestFocus();
 
         return myView;
     }

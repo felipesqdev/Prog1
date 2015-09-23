@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.util.Log;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 
@@ -20,6 +21,7 @@ public class FragmentTab1 extends Fragment implements ActionBar.TabListener, Vie
     private static final String TAG = FragmentTab1.class.getSimpleName();
     private static final String ARG_SECTION_NUMBER = "section_number";
     private static View myView;
+    private static Button speakButton;
 
     public static FragmentTab1 newInstance(int sectionNumber) {
         FragmentTab1 fragment = new FragmentTab1();
@@ -40,6 +42,11 @@ public class FragmentTab1 extends Fragment implements ActionBar.TabListener, Vie
         // s = getArguments().getInt(ARG_SECTION_NUMBER, 0);
 
         myView = inflater.inflate(R.layout.fragment_main1, container, false);
+
+        speakButton = (Button)myView.findViewById(R.id.f1button);
+        //listen for clicks
+        speakButton.setOnClickListener(this);
+        speakButton.requestFocus();
 
         return myView;
     }

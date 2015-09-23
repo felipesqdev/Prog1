@@ -20,7 +20,7 @@ public class SpeakWords extends MainActivity implements TextToSpeech.OnInitListe
     private static TextToSpeech myTTS;
 
     //status check code
-    private static int MY_DATA_CHECK_CODE = 0;
+    private static int MY_DATA_CHECK_CODE = 123;
 
     //activity pointer
     private static Activity MyActivity;

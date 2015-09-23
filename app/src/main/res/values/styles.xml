@@ -5,4 +5,19 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="MyButton" parent="android:Widget.Button">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="MyButton.Green">
+        <item name="android:background">@drawable/ic_green_button</item>
+    </style>
+
+    <style name="MyButton.Orange">
+        <item name="android:background">@drawable/ic_orange_button</item>
+    </style>
+
 </resources>
